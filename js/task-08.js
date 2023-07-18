@@ -5,9 +5,12 @@ const loginFormEl = document.querySelector('form.login-form');
 loginFormEl.addEventListener('submit', (event) => {
 event.preventDefault();
 
-if (!loginFormEl.checkValidity()) {
-   alert('Please fill in all fields.');
-   return;
+const emailInput = loginFormEl.elements.email;
+  const passwordInput = loginFormEl.elements.password;
+
+  if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+    alert('Please fill in all fields.');
+    return;
 }
 
 const formElements = loginFormEl.elements;
